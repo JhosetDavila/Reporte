@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="01a46c89-54a1-4e75-af7d-9ec1bbd3548e">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="PRECIO" class="java.lang.Integer"/>
+	<parameter name="PRECIO2" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select*from producto where Precio BETWEEN $P{PRECIO} AND $P{PRECIO2}]]>
+	</queryString>
+	<field name="Id_Prod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Des_Prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Precio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="212" y="25" width="100" height="20" uuid="294d48db-4de9-4807-a88f-8f281413c90f"/>
+				<text><![CDATA[Texto Estatico]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="42" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="100" height="20" uuid="584b8e17-8c8d-4fe1-ad99-014a7a1f4c75"/>
+				<text><![CDATA[Id_Prod]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="41" width="100" height="20" uuid="69edb586-8e3c-4f7a-a12f-22f8dfab813a"/>
+				<text><![CDATA[Des_Prod]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="41" width="100" height="20" uuid="c61a7bf5-c36f-48e3-a6a3-8a421383aa6e"/>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="11ec8c36-62a7-48b1-ae8c-5650fc7ae5e2"/>
+				<textFieldExpression><![CDATA[$F{Id_Prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="100" height="20" uuid="6eaccf86-9096-4d51-8a86-ae23aa20acdb"/>
+				<textFieldExpression><![CDATA[$F{Des_Prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="100" height="20" uuid="9bf5db03-48b0-40c1-b982-d6e6523e0259"/>
+				<textFieldExpression><![CDATA[$F{Precio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch"/>
+	</summary>
+</jasperReport>
